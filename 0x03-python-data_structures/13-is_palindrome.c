@@ -1,22 +1,54 @@
 #include "lists.h"
+
 /**
- * is_palindrome - checks if palindrome
- * @head: head of node
- * Return: 0 if not, 1 if is
- */
+* list_len - finds no. of elements ina linked list.
+* @h: pointer to linked list.
+*
+* Return: number of elements in linked list.
+*/
+size_t list_len(listint_t *h)
+{
+	size_t  nodes = 0;
+
+	if (h == NULL)
+		return (0);
+	while (h != NULL)
+	{
+		nodes++;
+		h = h->next;
+	}
+	return (nodes);
+}
+
+/**
+* is_palindrome - checks if a singly linked list is a palindrome.
+* @head: double pointert to head of d-list.
+*
+* Return: 1 if palindrome, 0 otherwise.
+*/
 int is_palindrome(listint_t **head)
 {
-	unsigned int len = 1;
+	int *nArr, i = 0, j = 0, len = 0;
 	listint_t *temp;
 
-	if (head == NULL|| *head == NULL)
+	if (*head == NULL)
 		return (1);
-
 	temp = *head;
-	while (temp) /* get len of list */
+	len = list_len(temp);
+	nArr = (int *)malloc(sizeof(int) * len);
+	if (nArr == NULL)
+		return (2);
+	temp = *head;
+	while (temp != NULL)
 	{
+		nArr[j] = temp->n;
+		j++;
 		temp = temp->next;
-		len++;
 	}
-	return (0);
+	for (i = 0, j = len - 1; i < j; i++, j--)
+	{
+		if (nArr[i] != nArr[j])
+			return (0);
+	}
+	return (1);
 }
