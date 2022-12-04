@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
-* list_len - finds no. of elements ina linked list.
-* @h: pointer to linked list.
-*
-* Return: number of elements in linked list.
-*/
+ * list_len - finds no. of elements ina linked list.
+ * @h: pointer to linked list.
+ *
+ * Return: number of elements in linked list.
+ */
 size_t list_len(listint_t *h)
 {
 	size_t  nodes = 0;
@@ -22,7 +22,7 @@ size_t list_len(listint_t *h)
 
 /**
 * is_palindrome - checks if a singly linked list is a palindrome.
-* @head: double pointert to head of d-list.
+* @head: double pointer to head of d-list.
 *
 * Return: 1 if palindrome, 0 otherwise.
 */
