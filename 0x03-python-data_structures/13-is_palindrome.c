@@ -26,7 +26,7 @@ size_t list_len(listint_t *h)
 * is_palindrome - checks if a singly linked list is a palindrome.
 * @head: double pointer to head of d-list.
 *
-* Return: 1 if palindrome, 0 otherwise.
+* Return: 1 if palindrome, 0 if not.
 */
 int is_palindrome(listint_t **head)
 {
